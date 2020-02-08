@@ -1,0 +1,39 @@
+{
+  "name": "herramientasbuildsystemsytecnologiasemergentes_ariel_barajas",
+  "version": "1.0.0",
+  "description": "Proyecto NextU Final",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --hot"
+  },
+  "author": "Ariel.On",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^8.0.6",
+    "babel-preset-react-app": "^3.1.2",
+    "bootstrap": "^4.4.1",
+    "firebase": "^7.8.1",
+    "formik": "^2.1.4",
+    "jquery": "^3.4.1",
+    "path": "^0.12.7",
+    "react": "^16.12.0",
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-dom": "^16.12.0",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "webpack-dev-server": "^3.10.2",
+    "yup": "^0.28.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "css-loader": "^3.4.2",
+    "style-loader": "^1.1.3",
+    "ts-loader": "^6.2.1",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}

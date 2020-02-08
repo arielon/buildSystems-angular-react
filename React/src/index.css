@@ -1,0 +1,19 @@
+#store {
+    width: 100vw;
+    height: 100vh;
+    background: url("/src/img/main-fondo.jpg") no-repeat;
+    background-size: cover;
+}
+
+.login {
+    width: 100vw;
+    height: 100vh;
+    background:linear-gradient( rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5)100%), url("/src/img/login-fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login .container {
+    padding-left: 20%;
+    padding-right: 20%;
+}
