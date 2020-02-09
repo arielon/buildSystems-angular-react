@@ -7,10 +7,35 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Image from 'react-bootstrap/Image';
+import aguacate from '../src/img/aguacate.jpg'
 
 class Home extends React.Component {
     constructor(){
         super();
+        this.state = {
+            search: ''
+        };
+        this.handleChange = this.handleChange.bind(this)
+        this.addSearch = this.addSearch.bind(this)
+    }
+
+    addSearch(e){
+        fetch("/tienda", {
+            method: "POST",
+            body: JSON.stringify(this.state),
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            }
+        }).then(res => console.log(res)).catch(err => console.error(err));
+        e.preventDefault();
+    }
+
+    handleChange(e) {
+        const { name, value } = e.target;
+        this.setState({
+            [name]: value
+        })
     }
 
     render() {
@@ -34,15 +59,18 @@ class Home extends React.Component {
                     </Col>
                     <Col>
                         <span>¿Qué estás buscando?</span>
-                        <Form.Group>
-                            <Form.Control type="text" placeholder="Buscar producto" />
-                        </Form.Group>
+                        <Form onSubmit={this.addSearch}>
+                            <Form.Group>
+                                <Form.Control onChange={this.handleChange} name="search" type="text" placeholder="Buscar producto" />
+                            </Form.Group>
+                            <Button type="submit" className="center mt-2">Buscar</Button>
+                        </Form>
                     </Col>
                 </Row>
                 <Row className="bg-white">
                     <Col className="producto-lista">
                         <div>
-                            <Image src="../src/img/aguacate.jpg" fluid />
+                            <Image src={aguacate} fluid />
                             <h2>Producto</h2>
                             <p><strong>Precio:</strong></p>
                             <p><strong>Unidades disponibles</strong></p>

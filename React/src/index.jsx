@@ -13,7 +13,7 @@ render(
     <AuthProvider>
         <Router>
             <PrivateRoute exact path="/" component={Home} />
-            <Route exact path="/login" component={Login} />
+            <Route path="/login" component={Login} />
         </Router>
     </AuthProvider>,
     document.getElementById("store")

@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon server/index.js",
-    "webpack": "webpack --mode development"
+    "webpack": "webpack --mode development --watch",
+    "startReact": "webpack-dev-server --hot"
   },
   "author": "Ariel.On",
   "license": "ISC",
@@ -37,6 +38,7 @@
     "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
     "css-loader": "^3.4.2",
+    "file-loader": "^5.0.2",
     "nodemon": "^2.0.2",
     "style-loader": "^1.1.3",
     "ts-loader": "^6.2.1",
