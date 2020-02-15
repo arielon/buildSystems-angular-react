@@ -1,0 +1,21 @@
+<div class="login">
+  <div class="loginFondo">
+    <div class=" fluid cubrirAltura">
+      <div class="grid-x align-middle cubrirAltura">
+        <div class="cell small-8 medium-6 large-4 small-offset-2 medium-offset-3 large-offset-4">
+          <h2 class="tituloLogin">Iniciar Sesión</h2>
+          <form>
+            <form-input #email [texto]="'Correo electrónico'" [tipo]="'email'"
+              [placeholder]="'nextu@gmail.com'" [alCambiarValor]="this.cambiaEmail.bind(this)"></form-input>
+            <form-input #contrasena [texto]="'Contraseña'" [tipo]="'password'"
+              [placeholder]="'nextu123'" [alCambiarValor]="this.cambiaContrasena.bind(this)"></form-input>
+
+            <div type="submit" [ngClass]="{button:true, medium:true, disabled:!validCorrecta}" (click)="clickIngresar($event)">Ingresar</div>
+            <label class="text-center lblError" *ngIf="errorEnvio">{{msjError}}</label>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+<div>
+

@@ -1,0 +1,28 @@
+<div class="top-bar barraSuperior">
+  <div class="top-bar-left">
+    <h4>La Bodega</h4>
+  </div>
+  <div class="top-bar-right">
+    <div class="menu barraSuperior">
+      <div class="menu-item">
+        <a [routerLink]="['/catalogo']">
+          <i class="fi-thumbnails"></i> Catálogo
+        </a>
+      </div>
+      <div class="menu-item">
+        <a [routerLink]="['/carrito']">
+          <i class="fi-shopping-cart"></i> Carrito
+          <div class="badge iconoNotifCarrito" *ngIf="clienteTiendaService.productosCarrito.length>0">
+            {{clienteTiendaService.productosCarrito.length}}
+          </div>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a (click)="cerrarSesion()">
+          <i [class]="clienteTiendaService.estadoLogin == 2 ? 'fi-x':'fi-home'"></i>
+          {{clienteTiendaService.estadoLogin == 2 ? "Cerrar sesión" : "Login"}}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
