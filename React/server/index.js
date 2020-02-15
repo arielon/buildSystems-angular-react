@@ -1,20 +1,19 @@
-const express = require("express"),
-    bodyParser = require('body-parser'),
-    morgan = require('morgan'),
-    path = require("path")
+const express = require('express');
+const path = require('path');
 
-const { mongoose } = require("./database");
+const app = express();
 
-const app = express()
-app.set('port', process.env.PORT || 3000);
+// Serve the static files from the React app
+app.use(express.static(path.join(__dirname, '../dist')));
 
-app.use(morgan('dev'));
-app.use(bodyParser.json());
 
-app.use('/tienda', require('../routes/tasks.routes'))
-
-app.use(express.static(path.join(__dirname, "../public")))
-
-app.listen(app.get('port'), () => {
-    console.log(`server on port ${app.get('port')}`);
+// Handles any requests that don't match the ones above
+app.get('/', (req,res) =>{
+    console.log('Sent File');
+    res.sendFile(path.join(__dirname + '..//dist/index.html'));
 });
+
+const port = process.env.PORT || 5000;
+app.listen(port);
+
+console.log('App is listening on port ' + port);
