@@ -1,0 +1,17 @@
+URL GitHub: https://github.com/arielon/buildSystems-angular-react
+
+Angular:
+Instalar dependencias npm install
+Correr npm run crearbd
+Correr ng serve
+Correr npm run servidor
+
+Iniciar sesion con
+    email: ariel@nextu.com contrasena: prueba123
+
+React:
+Instalar dependencias npm install
+Correr npm start
+
+Iniciar sesion con
+    email: ariel@nextu.com contrasena: prueba123
